@@ -62,6 +62,20 @@ make4.1+ perl python3.7+ rsync subversion unzip which
    cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen
    applications for your target system.
 
+### Building `webui-factory.bin`
+
+The `tplink_archer-ax80-v1` device is defined in
+`target/linux/mediatek/image/filogic.mk`.  That entry generates the
+`webui-factory.bin` image using the helper script `tplink-mkimage-ubi.py`.
+
+Build the factory image with:
+
+```
+make image PROFILE=tplink_archer-ax80-v1
+```
+
+The resulting file will appear in `bin/targets/`.
+
 ### Related Repositories
 
 The main repository uses multiple sub-repositories to manage packages of
